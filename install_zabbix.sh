@@ -87,20 +87,10 @@ function install_zabbix_agent2() {
 # Install optional Zabbix Agent2 plugins
 ###############################################################################
 function install_zabbix_agent2_plugins() {
-  echo -n "Do you want to install Zabbix Agent2 plugins for MongoDB, MS SQL, and PostgreSQL? (y/N): "
-  read -r reply
-  case "$reply" in
-    [yY][eE][sS]|[yY])
-      echo "Installing plugins..."
-      $SUDO apt-get install -y zabbix-agent2-plugin-mongodb \
-                              zabbix-agent2-plugin-mssql \
-                              zabbix-agent2-plugin-postgresql
-      ;;
-    *)
-      echo "Skipping plugin installation."
-      ;;
-  esac
-}
+  echo "Installing plugins..."
+  $SUDO apt-get install -y zabbix-agent2-plugin-mongodb \
+                          zabbix-agent2-plugin-mssql \
+                          zabbix-agent2-plugin-postgresql
 
 ###############################################################################
 # Fetch appropriate config depending on GPU availability
