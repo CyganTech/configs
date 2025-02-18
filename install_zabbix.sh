@@ -91,6 +91,7 @@ function install_zabbix_agent2_plugins() {
   $SUDO apt-get install -y zabbix-agent2-plugin-mongodb \
                           zabbix-agent2-plugin-mssql \
                           zabbix-agent2-plugin-postgresql
+}
 
 ###############################################################################
 # Fetch appropriate config depending on GPU availability
